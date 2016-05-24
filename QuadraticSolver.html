@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Quadratic Equation Solver</title>
+</head>
+<body>
+<p>
+<script>
+alert("This is to solve the equation for the vertex (Does not graph!)");
+var a = prompt("ax^2+bx+c","What is a equal to?");
+var b = prompt("ax^2+bx+c","What is b equal to?");
+var c = prompt("ax^2+bx+c","What is c equal to?");
+//Asking the user for the value to the variables in the Equation.
+    
+var newA = parseInt(a)
+var newB = parseInt(b)
+var newC = parseInt(c)
+//Converting the variables from a string to an integer.
+
+document.write("The Equation is "+ newA +"x^2+"+ newB +"x+"+ newC);
+//Showing the user the Equation.
+
+var secB = -1 * newB;
+var secA = 2 * newA;
+var x = secB / secA;
+var newX = Math.pow(x, 2)
+var thirA = newA * newX;
+var thirB = newB * x;
+var y = thirA + thirB + newC;
+//Doing the math    
+  
+document.write("<BR>");
+document.write("<BR>");
+document.write("Solving for x");
+document.write("<BR>");
+document.write("<u>-(b)</u> = <u>-("+ newB +")</u> = <u>"+ secB +"</u><BR>");
+document.write("2(a) = 2("+ newA +") = "+ secA +" (Those are fractions)<BR>");
+document.write("<BR>");
+document.write("x = "+ x +"<BR>");
+document.write("<BR>");
+document.write("<BR>");
+document.write("Solving for y");
+document.write("<BR>");
+document.write("y = "+ newA +"("+ x +")^2+"+ newB +"("+ x +")+"+ newC + "<BR>");
+document.write("y = "+ thirA +"+"+ thirB +"+"+ newC + "<BR>");
+document.write("y = "+ y);
+document.write("<BR>");
+document.write("<BR>");
+document.write("The vertex: ("+ x +","+ y +")<BR>");
+//Showing work    
+
+</script>
+<noscript>Your Browser Must Support Javascript!</noscript>
+<!-- Noscript tells the user they need js to use this (only shows if js is disabled).-->
+</p>
+<div style="position: absolute; top: 200; left: 400;">
+<p>
+<script>
+
+    
+function Equation(xint) {
+        
+var retX = Math.pow(xint, 2)
+var retX = retX * newA
+var retX = retX + newB * xint;
+var retX = retX + newC;
+
+return retX;
+}
+//The function solves the equation with the new x value, and returns the new y value.
+    
+var oneX = x - 2;
+var twoX = x - 1;
+var threeX = x + 1;
+var fourX = x + 2;
+
+var oneY = Equation(oneX)
+var twoY = Equation(twoX)
+var threeY = Equation(threeX)
+var fourY = Equation(fourX)
+//Doing More Math    
+   
+document.write("X | Y | Equation<BR>");
+document.write("<BR>");
+document.write(oneX +" | "+ oneY + " | "+ newA +"("+ oneX +")^2+"+ newB + "("+ oneX +")+"+ newC + "<BR>");
+document.write("<BR>");
+document.write(twoX +" | "+ twoY + " | "+ newA +"("+ twoX +")^2+"+ newB + "("+ twoX +")+"+ newC + "<BR>");
+document.write("<BR>");
+document.write(x +" | "+ y +" | "+ newA +"("+ x +")^2+"+ newB + "("+ x +")+"+ newC + " (Vertex)<BR>");
+document.write("<BR>");
+document.write(threeX +" | "+ threeY + " | "+ newA +"("+ threeX +")^2+"+ newB + "("+ threeX +")+"+ newC + "<BR>");
+document.write("<BR>");
+document.write(fourX +" | "+ fourY + " | "+ newA +"("+ fourX +")^2+"+ newB + "("+ fourX +")+"+ newC + "<BR>");
+//Making the Table
+</script>
+</p>
+</div>
+</body>
+</html>
